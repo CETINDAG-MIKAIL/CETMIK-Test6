@@ -15,6 +15,14 @@ using namespace std;
 //   de la classe, le .cpp contenant la definition des methodes, et ensuite le makefile permettant de compiler
 //   le tout grace a la commande make 
 
+class model
+{
+  private :
+
+  public :
+  
+
+};  
 int main()
 {
 
