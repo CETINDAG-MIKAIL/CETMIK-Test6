@@ -11,5 +11,4 @@ objs/ImageNG.o :	sources/ImageNG.cpp include/ImageNG.h
 
 clean: 
 	rm -f *.o core 
-clobber:	
-	rm -f bin/Test1
+clobber:	-f bin/Test1
