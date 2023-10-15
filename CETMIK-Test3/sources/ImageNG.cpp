@@ -60,3 +60,6 @@ void ImageNG::Affiche() const {
 void ImageNG::setDimension(const Dimension& d) {
     dimension = d;
 }
+
+ImageNG::ImageNG(const L_MAX, const H_MAX) : L_MAX(500), H_MAX(500) {
+}

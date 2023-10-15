@@ -10,6 +10,6 @@ objs/ImageNG.o :	sources/ImageNG.cpp include/ImageNG.h
 			$(COMP) sources/ImageNG.cpp -c -o objs/ImageNG.o
 
 clean: 
-	rm -f *.o core 
-clobber:	
+	rm -f objs/*.o core 
+clobber: clean	
 	rm -f bin/Test1

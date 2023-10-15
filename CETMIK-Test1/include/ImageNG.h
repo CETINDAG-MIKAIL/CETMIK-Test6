@@ -3,8 +3,8 @@
 	le fichier qui contient uniquement les prototypes des fonctions
 
 */
-#ifndef ImageNG_h
-#define ImageNG_h
+#ifndef IMAGENG_H
+#define IMAGENG_H
 
 class ImageNG
 {

@@ -24,6 +24,14 @@ public:
 	void Affiche() const;
     const Dimension& getDimension() const;
     void setDimension(const Dimension& d);
+ 	 
+ 	const L_MAX;
+	const H_MAX; 
+    static int matrice[L_MAX][H_MAX];
+
+    void setPixel(int x,int y, int val);
+    void getPixel(x, y);
+    void setBackground(int val);
 };
 
 #endif

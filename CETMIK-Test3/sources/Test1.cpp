@@ -1,28 +1,10 @@
-#include <stdlib.h>
+#include <math.h>
 #include <iostream>
+#include <cstring>
 using namespace std;
-// #include "ImageNG.h"
 
-// Quelques conseils avant de commencer...
-// * N'oubliez pas de tracer (cout << ...) tous les constructeurs et le destructeur !!! Ca, c'est pas un conseil,
-//   c'est obligatoire :-)
-// * N'essayez pas de compiler ce programme entierement immediatement. Mettez tout en commentaires
-//   sauf le point (1) et creez votre classe (dans ce fichier pour commencer) afin de compiler et tester 
-//   le point (1). Une fois que cela fonctionne, decommentez le point (2) et modifier votre classe en 
-//   consequence. Vous developpez, compilez et testez donc etape par etape. N'attendez pas d'avoir encode 
-//   300 lignes pour compiler...
-// * Une fois que tout le programme compile et fonctionne correctement, creez le .h contenant la declaration
-//   de la classe, le .cpp contenant la definition des methodes, et ensuite le makefile permettant de compiler
-//   le tout grace a la commande make 
+#include "ImageNG.h"
 
-class model
-{
-  private :
-
-  public :
-  
-
-};  
 int main()
 {
 
