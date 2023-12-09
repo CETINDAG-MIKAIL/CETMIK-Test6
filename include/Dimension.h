@@ -1,6 +1,10 @@
 #ifndef DIMENSION_H
 #define DIMENSION_H
 #include <iostream>
+// #include "ImageNG.h"
+// #include "Dimension.h"
+
+
 class Dimension
 { 
 	private :

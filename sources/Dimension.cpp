@@ -4,7 +4,8 @@
 
 using namespace std;
 #include "Dimension.h"
-#include "ImageNG.h"
+#include "XYException.h"
+
 //#include "MyQT.h"
 
 
@@ -13,8 +14,8 @@ using namespace std;
 ///////////// constructeur par default //////////////
 Dimension::Dimension()
 {
-	setLargeur(0);
-	setHauteur(0);
+	setLargeur(300);
+	setHauteur(300);
 }
 
 std::ostream& operator<<(std::ostream& os, const Dimension& d1)
@@ -30,7 +31,17 @@ std::istream& operator>>(std::istream& is, Dimension& d1)
 
 	cout << "Entrez la hauteur :" << endl; 
 	cin >> d1.hauteur;
-
+	if (d1.largeur < 1 || d1.hauteur < 1) {
+	        if (d1.largeur < 1 && d1.hauteur < 1) 
+	            throw XYException("Dimension invalide !\n", "d");
+	        
+	        if (d1.largeur < 1) 
+	            throw XYException("Largeur invalide !", "x");
+	        
+	        if (d1.hauteur < 1) 
+	            throw XYException("Hauteur invalide !\n", "y");
+	        
+	    }
 	return is;	
 }
 
@@ -39,7 +50,15 @@ std::istream& operator>>(std::istream& is, Dimension& d1)
 ///////////// constructeur initialisation //////////////
 Dimension::Dimension(int l, int h)
 {
+	if(l < 0 && h < 0)
+		throw(XYException("Dimension doit être superieur a 0 !\n", "d"));
+	
+	if(l<0)
+		throw(XYException("Largeur doit être superieur a 0 !\n", "x"));
 	setLargeur(l);
+
+	if(h<0)
+			throw(XYException("Hauteur doit être superieur a 0 !\n", "y"));
 	setHauteur(h);
 }
 /*
@@ -55,7 +74,15 @@ Dimension::Dimension(int l, int h, Dimension d1)
 ///////////// constructeur copie //////////////
 Dimension::Dimension(const Dimension& p)
 {
+	if(p.largeur < 0 && p.hauteur < 0)
+		throw(XYException("Dimension doit être superieur a 0 !\n", "d"));
+
+	if(p.largeur<0)
+		throw(XYException("Largeur doit être superieur a 0 !\n", "x"));
 	setLargeur(p.largeur);
+
+	if(p.hauteur<0)
+			throw(XYException("Hauteur doit être superieur a 0 !\n", "y"));
 	setHauteur(p.hauteur);
 }
 
@@ -63,7 +90,7 @@ Dimension::Dimension(const Dimension& p)
 /////////// Destructeur ////////////////////
 Dimension::~Dimension()
 {
-	cout << "D" << endl;
+	cout << "D Dimension" << endl;
 }
 
 int Dimension::getLargeur()const{return largeur;}
@@ -71,11 +98,14 @@ int Dimension::getHauteur()const{return hauteur;}
 
 void Dimension::setLargeur(int l){
 
+	if(l<0)
+		throw(XYException("Largeur doit être superieur a 0 !\n", "x"));
 	largeur=l;
 }
 
 void Dimension::setHauteur(int h){
-
+	if(h<0)
+		throw(XYException("Hauteur doit être superieur a 0 !\n", "y"));
 	hauteur=h;
 }
 void Dimension::Affiche()
